@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+
+<div class="container">
+    <% if (messages.success) { %>
+        <div class="alert alert-info" role="alert">
+            <%- messages.success %>
+        </div>
+    <% } %>
+
+    <div class="row">
+        <div class="col">
+            <a href="/kategori/create" class="btn btn-sm btn-success mb-3">Tambah</a>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nama</th>
+                        <th colspan="2" scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data.length) { %>
+                        <% for(var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <th scope="row"><%= (i + 1) %></th>
+                                <td><%= data[i].nama_kategori %></td>
+                                <td>
+                                    <a href="/kategori/edit/<%= data[i].id_kategori %>" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="/kategori/delete/<%= data[i].id_kategori %>" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
