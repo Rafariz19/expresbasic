@@ -20,9 +20,9 @@
 
     <div class="card shadow-sm">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Data Kategori</h5>
-            <a href="/kategori/create" class="btn btn-sm btn-success">
-                + Tambah Kategori
+            <h5 class="mb-0">Data Produk</h5>
+            <a href="/produk/create" class="btn btn-sm btn-success">
+                + Tambah Produk
             </a>
         </div>
 
@@ -31,7 +31,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th>#</th>
-                        <th>Nama Kategori</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Kategori</th>
                         <th width="200">Aksi</th>
                     </tr>
                 </thead>
@@ -40,13 +42,15 @@
                         <% for (var i = 0; i < data.length; i++) { %>
                             <tr>
                                 <td><%= i + 1 %></td>
-                                <td class="text-start"><%= data[i].nama_kategori %></td>
+                                <td class="text-start"><%= data[i].nama_produk %></td>
+                                <td><%= data[i].harga %></td>
+                                <td><%= data[i].kategori %></td>
                                 <td>
-                                    <a href="/kategori/edit/<%= data[i].id_kategori %>" 
+                                    <a href="/produk/edit/<%= data[i].id %>" 
                                        class="btn btn-sm btn-warning me-1">
                                         Edit
                                     </a>
-                                    <a href="/kategori/delete/<%= data[i].id_kategori %>" 
+                                    <a href="/produk/delete/<%= data[i].id %>" 
                                        class="btn btn-sm btn-danger"
                                        onclick="return confirm('Yakin ingin menghapus data ini?')">
                                         Delete
@@ -57,7 +61,7 @@
                     <% } else { %>
                         <tr>
                             <td colspan="3" class="text-muted py-4">
-                                Data kategori belum tersedia
+                                Data produk belum tersedia
                             </td>
                         </tr>
                     <% } %>
