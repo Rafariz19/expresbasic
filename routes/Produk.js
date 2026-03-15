@@ -20,7 +20,6 @@ router.get('/', async function(req, res, next) {
       harga: '',
       kategori: ''
     })
-    
 });
 
 // Edit Produk

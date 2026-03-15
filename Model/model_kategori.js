@@ -2,6 +2,7 @@ const connection = require('../config/database');
 
 class model_kategori {
 
+    // Method untuk mendapatkan semua data kategori
     static async getAll(){
         return new Promise((resolve, reject) => {
             connection.query('select * from kategori order by id_kategori desc', (err, rows) => {
